@@ -33,6 +33,8 @@ $tweaks = @(
 	"InstallTitusProgs", #REQUIRED FOR OTHER PROGRAM INSTALLS!
 	"Install7Zip",
 	"InstallNotepadplusplus",
+	"InstallPDFxchange",
+	
 
 	### Windows Apps
 	"DebloatAll",
@@ -66,7 +68,7 @@ $tweaks = @(
 	"SetCurrentNetworkPrivate",     # "SetCurrentNetworkPublic",
 	"SetUnknownNetworksPrivate",  	# "SetUnknownNetworksPublic",
 	"DisableNetDevicesAutoInst",  	# "EnableNetDevicesAutoInst",
-	"DisableCtrldFolderAccess",	# "EnableCtrldFolderAccess",
+	"DisableCtrldFolderAccess",		# "EnableCtrldFolderAccess",
 	"EnableFirewall",
 	"EnableDefender",
 	"EnableDefenderCloud",
@@ -92,8 +94,8 @@ $tweaks = @(
 	"DisableSuperfetch",          	# "EnableSuperfetch",
 	"EnableIndexing",
 	"SetBIOSTimeUTC",             	# "SetBIOSTimeLocal",
-	"DisableHibernation",		# "EnableHibernation",          # 
-	"DisableSleepButton",		# "EnableSleepButton",         
+	"DisableHibernation",			# "EnableHibernation",          # 
+	"DisableSleepButton",			# "EnableSleepButton",         
 	"DisableSleepTimeout",        	# "EnableSleepTimeout",
 	# "DisableFastStartup",         # "EnableFastStartup",
 
@@ -106,7 +108,7 @@ $tweaks = @(
 	"DisableStickyKeys",            # "EnableStickyKeys",
 	"ShowTaskManagerDetails"        # "HideTaskManagerDetails",
 	"ShowFileOperationsDetails",    # "HideFileOperationsDetails",
-	"DisableFileDeleteConfirm",	# "EnableFileDeleteConfirm",    
+	"DisableFileDeleteConfirm",		# "EnableFileDeleteConfirm",    
 	"HideTaskbarSearch",
 	#"ShowTaskbarSearchIcon",      	# "ShowTaskbarSearchBox",
 	"HideTaskView",               	# "ShowTaskView",
@@ -120,7 +122,7 @@ $tweaks = @(
 	# "SetVisualFXPerformance",     # "SetVisualFXAppearance",
 	# "AddENKeyboard",              # "RemoveENKeyboard",
 	"EnableNumlock",             	# "DisableNumlock",
-	"EnableDarkMode",		# "DisableDarkMode",
+	"EnableDarkMode",				# "DisableDarkMode",
 	"Stop-EdgePDF",
 
 	### Explorer UI Tweaks ###
@@ -153,18 +155,18 @@ $tweaks = @(
 	"UninstallMsftBloat",           # "InstallMsftBloat",
 	"UninstallThirdPartyBloat",     # "InstallThirdPartyBloat",
 	# "UninstallWindowsStore",      # "InstallWindowsStore",
-	# "DisableXboxFeatures",          # "EnableXboxFeatures",
+	"DisableXboxFeatures",          # "EnableXboxFeatures",
 	"DisableAdobeFlash",            # "EnableAdobeFlash",
-	"InstallMediaPlayer", 		# "UninstallMediaPlayer",
-	"UninstallInternetExplorer",  # "InstallInternetExplorer",
-	"UninstallWorkFolders",       # "InstallWorkFolders",
-	"InstallLinuxSubsystem",      # "UninstallLinuxSubsystem",
+	"UninstallMediaPlayer",			# "InstallMediaPlayer",
+	"UninstallInternetExplorer",  	# "InstallInternetExplorer",
+	"UninstallWorkFolders",     	# "InstallWorkFolders",
+	"InstallLinuxSubsystem",	    # "UninstallLinuxSubsystem",
 	# "InstallHyperV",              # "UninstallHyperV",
 	"SetPhotoViewerAssociation",    # "UnsetPhotoViewerAssociation",
 	"AddPhotoViewerOpenWith",       # "RemovePhotoViewerOpenWith",
-	"InstallPDFPrinter"		# "UninstallPDFPrinter",
-	# "UninstallXPSPrinter",          # "InstallXPSPrinter",
-	# "RemoveFaxPrinter",             # "AddFaxPrinter",
+	"InstallPDFPrinter"				# "UninstallPDFPrinter",
+	"UninstallXPSPrinter",          # "InstallXPSPrinter",
+	"RemoveFaxPrinter",             # "AddFaxPrinter",
 
 	### Server Specific Tweaks ###
 	# "HideServerManagerOnLogin",   # "ShowServerManagerOnLogin",
@@ -175,8 +177,8 @@ $tweaks = @(
 	# "EnableAudio",                # "DisableAudio",
 
 	### Unpinning ###
-	#"UnpinStartMenuTiles",
-	#"UnpinTaskbarIcons",
+	"UnpinStartMenuTiles",
+	"UnpinTaskbarIcons",
 
 	### Auxiliary Functions ###
 )
@@ -196,14 +198,9 @@ Function InstallTitusProgs {
 	./OOSU10.exe ooshutup10.cfg /quiet
 }
 
-Function InstallAdobe {
-	Write-Output "Installing Adobe Acrobat Reader"
-	choco install adobereader -y
-}
-
-Function InstallJava {
-	Write-Output "Installing Java"
-	choco install jre8 -y
+Function InstallPDFxchange {
+	Write-Output "Installing PDF-XChange Editor"
+	choco install pdfxchangeeditor -y
 }
 
 Function Install7Zip {
